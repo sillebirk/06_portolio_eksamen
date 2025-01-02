@@ -35,7 +35,7 @@ h3 {
   font-family: "Ssonder_Regular";
   font-size: 74px;
   font-weight: 300;
-  background-color: #cbc7b8;
+  background: radial-gradient(circle, #f00f09, #f0c169, #fffcf3) 100%;
   padding: 30px 10px 30px 0;
   margin: 0;
   text-align: right;
@@ -58,11 +58,11 @@ a {
 }
 
 #tilbage {
-  position: fixed;
-  top: 0;
+  position: fixed; /* får prikken til at blive konstans på siden, selvom der scrolles */
+  top: 10px;
   left: 10px;
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   background-image: url(img/tilbage_knap.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -111,8 +111,14 @@ a {
   padding: 30px 10px 30px 50px;
 }
 
+.h1_projekter {
+  font-size: 55px;
+  text-align: right;
+  padding: 100px 10px 20px 10px;
+}
+
 .uden_baggrund {
-  background-color: transparent;
+  background: none;
   padding: 10px 10px 0;
 }
 
@@ -123,7 +129,7 @@ a {
 @media (min-width: 800px) {
   .forside_billede {
     object-fit: cover;
-    justify-self: center;
+    justify-self: right;
     max-width: 50%;
     height: auto;
   }
@@ -137,6 +143,12 @@ a {
     padding: 30px 10px 30px 500px;
   }
 
+  .h1_projekter {
+    font-size: 90px;
+    text-align: right;
+    padding: 100px 10px 20px 10px;
+  }
+
   .uden_baggrund {
     background-color: transparent;
     padding: 10px 10px 0;
@@ -146,25 +158,16 @@ a {
 /*** NAV-BAR ***/
 
 header {
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
-  padding: 5px;
   background-color: #fffeef;
-}
-
-.logo img {
-  height: 90px;
-  width: auto;
 }
 
 nav {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -174,6 +177,8 @@ nav {
   margin: 0;
   padding: 0;
   margin-top: auto;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .menu li {
@@ -227,9 +232,20 @@ nav {
     flex-direction: column;
     padding: 0px;
     display: none;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: radial-gradient(circle, #f00f09, #f0c169, #96c7c7) 100%;
+    background-size: cover;
+    overflow: hidden;
   }
   .burger {
     display: block;
+    cursor: pointer;
   }
   .burger.active .line:nth-child(1) {
     transition: 0.2s linear;
@@ -243,14 +259,21 @@ nav {
     transition: 0.2s linear;
   }
 
+  nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
   nav.active .menu {
     display: block;
-    background-color: rgba(58, 61, 0, 0.65);
-    position: absolute;
-    top: 94px;
+
+    background-size: cover;
+    position: fixed;
+    top: 0px;
     left: 0;
     width: 100%;
-    z-index: 1;
   }
 
   nav.active .menu li {
@@ -259,9 +282,9 @@ nav {
 
   nav.active .menu a {
     font-family: "Neue Montreal", sans-serif;
-    font-size: 45px;
+    font-size: 70px;
+    color: #fffeef;
     font-weight: 800;
-    padding-right: 0px;
   }
 }
 /*** NAV BAR SLUT ***/
