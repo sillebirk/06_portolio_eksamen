@@ -28,7 +28,7 @@ h2 {
   font-size: 25px;
   letter-spacing: 7px;
   text-align: right;
-  padding: 0 10px;
+  padding: 15px 10px 0;
 }
 
 h3 {
@@ -43,7 +43,7 @@ h3 {
 
 p {
   font-family: "Neue Montreal";
-  font-size: 20px;
+  font-size: 18px;
 }
 
 a {
@@ -55,6 +55,92 @@ a {
   border-top: 1px solid #f00f09;
   margin-top: 30px;
   margin-bottom: 40px;
+}
+
+#tilbage {
+  position: fixed;
+  top: 0;
+  left: 10px;
+  width: 70px;
+  height: 70px;
+  background-image: url(img/tilbage_knap.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*** FORSIDE ***/
+
+.velkommen {
+  font-size: 22px;
+  display: flex; /* Gør det nemt at justere placering af indhold */
+  justify-content: flex-start; /* Højrejuster teksten vandret */
+  align-items: flex-end; /* Placer teksten i bunden lodret */
+  text-align: left; /* Justér teksten inden for boksen til højre */
+  height: 100%; /* Sørg for, at containeren strækker sig over hele højden */
+}
+
+.introduktion {
+  font-size: 18px;
+  display: flex; /* Gør det nemt at justere placering af indhold */
+  justify-content: flex-end; /* Højrejuster teksten vandret */
+  align-items: flex-end; /* Placer teksten i bunden lodret */
+  text-align: right; /* Justér teksten inden for boksen til højre */
+  height: 100%; /* Sørg for, at containeren strækker sig over hele højden */
+  padding: 0 10px;
+}
+
+.forside_billede {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 20px -20px 0 #3d1900; */
+}
+
+/*** PROJEKTER ***/
+
+.screenshots {
+  object-fit: cover;
+  justify-self: auto;
+  max-width: 100%;
+  height: auto;
+  padding: 0 30px;
+}
+
+.projekter {
+  text-align: right;
+  padding: 30px 10px 30px 50px;
+}
+
+.uden_baggrund {
+  background-color: transparent;
+  padding: 10px 10px 0;
+}
+
+/*** OM MIG ***/
+
+/*** DESKTOP TEKST + BILLEDER ***/
+
+@media (min-width: 800px) {
+  .forside_billede {
+    object-fit: cover;
+    justify-self: center;
+    max-width: 50%;
+    height: auto;
+  }
+
+  .screenshots {
+    padding: 50px 70px 20px 70px;
+  }
+
+  .projekter {
+    text-align: right;
+    padding: 30px 10px 30px 500px;
+  }
+
+  .uden_baggrund {
+    background-color: transparent;
+    padding: 10px 10px 0;
+  }
 }
 
 /*** NAV-BAR ***/
