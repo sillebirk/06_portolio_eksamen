@@ -8,6 +8,13 @@
 
 /*** GENEREL CSS ***/
 
+.indhold {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -28,44 +35,43 @@ h2 {
   font-size: 25px;
   letter-spacing: 7px;
   text-align: right;
-  padding: 15px 10px 0;
+  padding: 10px 10px 20px 10px;
 }
 
 h3 {
   font-family: "Ssonder_Regular";
-  font-size: 74px;
+  font-size: 40px;
   font-weight: 300;
-  background: radial-gradient(circle, #f00f09, #f0c169, #fffcf3) 100%;
-  padding: 30px 10px 30px 0;
-  margin: 0;
-  text-align: right;
+  background: radial-gradient(circle, #f00f09, #f0c169, #fffcf3, #fffeef) 75%;
+  padding: 190px 10px 190px 0;
 }
 
 p {
   font-family: "Neue Montreal";
-  font-size: 18px;
+  font-size: 20px;
+  overflow: hidden;
+  padding: 15px 0;
+  line-height: 130%;
 }
 
 a {
-  text-decoration: none;
+  font-family: "Ssonder_Regular";
+  font-size: 50px;
   color: black;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+b {
+  font-weight: 900;
 }
 
 .divider {
   border-top: 1px solid #f00f09;
   margin-top: 30px;
   margin-bottom: 40px;
-}
-
-#tilbage {
-  position: fixed; /* får prikken til at blive konstans på siden, selvom der scrolles */
-  top: 10px;
-  left: 10px;
-  width: 90px;
-  height: 90px;
-  background-image: url(img/tilbage_knap.png);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 /*** FORSIDE ***/
@@ -86,7 +92,7 @@ a {
   align-items: flex-end; /* Placer teksten i bunden lodret */
   text-align: right; /* Justér teksten inden for boksen til højre */
   height: 100%; /* Sørg for, at containeren strækker sig over hele højden */
-  padding: 0 10px;
+  margin: 10px 10px;
 }
 
 .forside_billede {
@@ -103,7 +109,7 @@ a {
   justify-self: auto;
   max-width: 100%;
   height: auto;
-  padding: 0 30px;
+  padding: 10px 0;
 }
 
 .projekter {
@@ -111,15 +117,40 @@ a {
   padding: 30px 10px 30px 50px;
 }
 
-.h1_projekter {
+.h1_mindre {
   font-size: 55px;
   text-align: right;
-  padding: 100px 10px 20px 10px;
+  padding: 30px 10px 20px 10px;
+  margin: 10px 10px;
+}
+
+.h2_venstre {
+  text-align: left;
+  font-size: 50px;
+  padding: 0;
 }
 
 .uden_baggrund {
   background: none;
   padding: 10px 10px 0;
+  text-align: right;
+}
+
+.link_til_site {
+  color: #f00f09;
+  font-style: italic;
+}
+
+.p_loesning {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.h2_loesning {
+  text-align: left;
+  padding: 10px 0;
+  font-size: 20px;
+  line-height: 150%;
 }
 
 /*** OM MIG ***/
@@ -127,6 +158,10 @@ a {
 /*** DESKTOP TEKST + BILLEDER ***/
 
 @media (min-width: 800px) {
+  .indhold {
+    max-width: 50%;
+  }
+
   .forside_billede {
     object-fit: cover;
     justify-self: right;
@@ -134,17 +169,25 @@ a {
     height: auto;
   }
 
-  .screenshots {
-    padding: 50px 70px 20px 70px;
+  .introduktion {
+    padding: 10px 10px 10px 750px;
   }
+
+  h3 {
+    padding: 350px 10px 350px 10px;
+  }
+
+  /* .screenshots {
+    padding: 50px 70px 20px 70px;
+  } */
 
   .projekter {
     text-align: right;
     padding: 30px 10px 30px 500px;
   }
 
-  .h1_projekter {
-    font-size: 90px;
+  .h1_mindre {
+    font-size: 75px;
     text-align: right;
     padding: 100px 10px 20px 10px;
   }
@@ -152,6 +195,11 @@ a {
   .uden_baggrund {
     background-color: transparent;
     padding: 10px 10px 0;
+  }
+
+  .p_centreret {
+    line-height: 150%;
+    word-wrap: break-word;
   }
 }
 
@@ -179,6 +227,7 @@ nav {
   margin-top: auto;
   width: 100%;
   justify-content: space-between;
+  transition: height 0.4s ease, opacity 0.4s ease;
 }
 
 .menu li {
@@ -209,20 +258,18 @@ nav {
 }
 
 .burger {
-  width: 40px;
-  height: 25px;
+  width: 20%;
+  height: 20%;
   cursor: pointer;
   margin: 10px;
   padding: 5px;
   color: #fffcf3;
 }
 
-.burger .line {
-  width: 40px;
-  height: 4px;
-  background-color: #f00f09;
+.burger img {
+  width: 100%;
+  height: auto;
   margin-bottom: 5px;
-  transition: 0.3s linear;
 }
 .burger {
   display: none;
@@ -247,28 +294,15 @@ nav {
     display: block;
     cursor: pointer;
   }
-  .burger.active .line:nth-child(1) {
-    transition: 0.2s linear;
-  }
-
-  .burger.active .line:nth-child(2) {
-    transition: 0.15s linear;
-  }
-
-  .burger.active .line:nth-child(3) {
-    transition: 0.2s linear;
-  }
-
   nav {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
   }
 
   nav.active .menu {
     display: block;
-
     background-size: cover;
     position: fixed;
     top: 0px;
