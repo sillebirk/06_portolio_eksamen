@@ -1,28 +1,72 @@
+/************ GRIDS ************/
+
+/*** VELKOMMEN PÅ INDEX ***/
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/*** MINE PROJEKTER ***/
 .grid_1-1-1-1 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
 }
 
-/* .roed {
-  background-color: #f00f09;
-  padding: 50px 0;
-} */
-
-.grid_1-1 {
+/*** FOOTER ***/
+.grid_footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
 }
 
-/* DESKTOP */
+/*** OM MIG ***/
+.grid_1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
 
+/* DESKTOP */
 @media (min-width: 800px) {
   .grid_1-1 {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .grid_1-1-1-1 {
+    display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .grid_1-1-1-1 {
+
+  /*** OM MIG ***/
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 30px;
+  }
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  col img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .flex_col img {
+    height: 360px;
+    object-fit: cover;
+  }
+
+  .grid_footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
