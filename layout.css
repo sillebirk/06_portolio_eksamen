@@ -13,14 +13,6 @@
   grid-template-columns: 1fr;
   gap: 30px;
 }
-
-/*** FOOTER ***/
-.grid_footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-}
-
 /*** OM MIG ***/
 .grid_1-1-1 {
   display: grid;
@@ -32,14 +24,23 @@
   flex-direction: column;
 }
 
+/*** FOOTER ***/
+.grid_footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
 /* DESKTOP */
 @media (min-width: 800px) {
+  /*** VELKOMMEN PÅ INDEX ***/
   .grid_1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
   }
 
+  /*** MINE PROJEKTER ***/
   .grid_1-1-1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -49,7 +50,7 @@
   .grid_1-1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 0 30px;
+    gap: 10px 30px;
   }
   .flex_col {
     display: flex;
@@ -64,8 +65,18 @@
   .flex_col img {
     height: 360px;
     object-fit: cover;
+    align-self: end;
   }
 
+  #col1 {
+    margin-top: auto;
+  }
+
+  #col2_3 {
+    margin-bottom: auto;
+  }
+
+  /*** FOOTER ***/
   .grid_footer {
     display: grid;
     grid-template-columns: 1fr 1fr;

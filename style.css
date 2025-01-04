@@ -23,16 +23,16 @@ body {
 }
 
 h1 {
-  font-family: "Neue Montreal";
+  font-family: "Neue Montreal", sans-serif;
   font-size: 128px;
-  font-weight: 800;
   color: #f00f09;
   padding: 5px;
+  font-weight: lighter;
 }
 
 h2 {
   font-family: "Neue Montreal";
-  font-weight: bold;
+  font-weight: lighter;
   font-size: 25px;
   letter-spacing: 7px;
   text-align: right;
@@ -40,7 +40,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Ssonder_Regular";
+  font-family: "Source Code Pro", serif;
   font-size: 40px;
   font-weight: 300;
   background: radial-gradient(circle, #f00f09, #f0c169, #fffcf3, #fffeef) 75%;
@@ -49,24 +49,22 @@ h3 {
 
 p {
   font-family: "Neue Montreal";
+  font-weight: lighter;
   font-size: 18px;
   overflow: hidden;
   padding: 15px 0;
-  line-height: 130%;
+  line-height: 150%;
+  word-wrap: break-word;
 }
 
 a {
-  font-family: "Ssonder_Regular";
+  font-family: "Source Code Pro", serif;
   font-size: 50px;
   color: black;
   text-decoration: none;
   text-align: center;
   justify-content: center;
   display: flex;
-}
-
-b {
-  font-weight: 900;
 }
 
 .divider {
@@ -98,9 +96,8 @@ b {
 
 .forside_billede {
   object-fit: cover;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
-  /* box-shadow: 20px -20px 0 #3d1900; */
 }
 
 /*** PROJEKTER ***/
@@ -147,22 +144,46 @@ b {
   font-style: italic;
 }
 
+/* Da passionssite og virksomhedssite ville fylde for meget */
 .link_til_site_mindre {
+  font-family: "Fira Code", monospace;
   font-size: 30px;
   color: #f00f09;
   font-style: italic;
 }
 
+/* min løsning afsnit nederst */
 .p_loesning {
   text-align: center;
   padding: 10px 0;
 }
-
 .h2_loesning {
   text-align: left;
   padding: 10px 0;
   font-size: 20px;
   line-height: 150%;
+  word-wrap: break-word;
+}
+
+/*** OM MIG ***/
+
+.om_mig_billede {
+  object-fit: cover;
+  justify-self: auto;
+  max-width: 100%;
+  height: auto;
+  padding: 10px 30px 0;
+}
+
+.p_om_mig {
+  font-size: 16px;
+  padding: 10px 30px 0;
+}
+
+.h2_om_mig {
+  font-size: 50px;
+  text-align: left;
+  padding: 10px 30px 0;
 }
 
 /*** FOOTER ***/
@@ -185,20 +206,6 @@ b {
   text-align: right;
 }
 
-/*** OM MIG ***/
-
-.om_mig_billede {
-  object-fit: cover;
-  justify-self: auto;
-  max-width: 100%;
-  height: auto;
-  padding: 10px 0;
-}
-
-.p_om_mig {
-  padding: 10px;
-}
-
 /*** DESKTOP TEKST + BILLEDER ***/
 
 @media (min-width: 800px) {
@@ -206,8 +213,9 @@ b {
     max-width: 45%;
   }
 
+  /*** FORSIDE ***/
   .velkommen {
-    font-size: 45px;
+    font-size: 50px;
     text-align: right;
     justify-content: flex-end;
     align-items: flex-end;
@@ -229,6 +237,7 @@ b {
     margin: 0;
   }
 
+  /*** PROJEKTER ***/
   h3 {
     padding: 350px 10px 350px 10px;
   }
@@ -273,7 +282,7 @@ b {
   }
 }
 
-/*** NAV-BAR ***/
+/*** NAV-BAR DESKTOP***/
 
 header {
   display: flex;
@@ -312,10 +321,9 @@ nav {
 .menu a {
   font-family: "Neue Montreal", sans-serif;
   font-size: 40px;
-  font-weight: 800;
   display: block;
-  padding: 10px;
-  color: black;
+  padding: 0 22px;
+  color: #f00f09;
   text-decoration: none;
   transition: transform 0.4s ease-out, color 0.4s ease-out;
   text-align: end;
@@ -344,10 +352,12 @@ nav {
 .burger {
   display: none;
 }
+
+/*** NAV-BAR MOBILE ***/
 @media screen and (max-width: 800px) {
   .menu {
     flex-direction: column;
-    padding: 0px;
+    padding: 0;
     display: none;
     justify-content: center;
     position: fixed;
@@ -386,10 +396,11 @@ nav {
 
   nav.active .menu a {
     font-family: "Neue Montreal", sans-serif;
-    font-size: 70px;
+    font-size: 60px;
+    line-height: 200%;
     color: #fffeef;
-    font-weight: 800;
     transition: transform 0.4s ease-out, color 0.4s ease-out;
+    padding-right: 0;
   }
 
   nav.active .menu a:hover {
@@ -402,11 +413,23 @@ nav {
 /*** FONTE ***/
 
 @font-face {
-  font-family: "Ssonder_Regular";
-  src: url(../fonte/webfontkit-20241229-090047/ssondertrial-regular-webfont.woff2) format(woff2);
+  font-family: "Neue Montreal", sans-serif;
+  src: url(../fonte/ppneuemontreal-book.woff);
+  font-style: normal;
+  font-weight: lighter;
+}
+/* HAVDE SÅ MANGE PROBLEMER HER AT JEG IKKE KUNNE FÅ FONTEN TIL AT FUNGERE, MÅSKE HAR DET VÆRET EN TRIAL SOM IKKE KUNNE VIRKE PÅ MIT DOMÆNE?
+
+@font-face {
+  font-family: "Ssonder_Regular", serif;
+  src: url(../fonte/ssondertrial-regular-webfont.woff) format(woff);
+  src: url(../fonte/ssondertrial-regular-webfont.woff2) format("woff2");
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Neue Montreal";
-  src: url(../fonte/neuemontreal-thin.woff-kopi);
-}
+  font-family: "Ssonder_Italic", serif;
+  src: url(../fonte/ssondertrial-italic-webfont.woff) format(woff);
+  src: url(../fonte/ssondertrial-italic-webfont.woff2) format(woff2);
+  font-style: italic;
+} */
