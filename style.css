@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Neue Montreal";
+  font-family: "Neue Montreal", sans-serif;
   font-weight: lighter;
   font-size: 25px;
   letter-spacing: 7px;
@@ -48,7 +48,7 @@ h3 {
 }
 
 p {
-  font-family: "Neue Montreal";
+  font-family: "Neue Montreal", sans-serif;
   font-weight: lighter;
   font-size: 18px;
   overflow: hidden;
@@ -357,7 +357,7 @@ nav {
 @media screen and (max-width: 800px) {
   .menu {
     flex-direction: column;
-    padding: 0;
+    padding: 0px;
     display: none;
     justify-content: center;
     position: fixed;
@@ -418,7 +418,8 @@ nav {
   font-style: normal;
   font-weight: lighter;
 }
-/* HAVDE SÅ MANGE PROBLEMER HER AT JEG IKKE KUNNE FÅ FONTEN TIL AT FUNGERE, MÅSKE HAR DET VÆRET EN TRIAL SOM IKKE KUNNE VIRKE PÅ MIT DOMÆNE?
+
+/* HAVDE PROBLEMER MED AT FÅ FONTEN TIL AT FUNGERE, MÅSKE HAR DET VÆRET EN TRIAL SOM IKKE KUNNE VIRKE PÅ MIT DOMÆNE?
 
 @font-face {
   font-family: "Ssonder_Regular", serif;
