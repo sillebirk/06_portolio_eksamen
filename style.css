@@ -6,6 +6,27 @@
   box-sizing: border-box;
 }
 
+/*** ANIMATION ***/
+
+.fade_in {
+  animation-name: fade_in_kf;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade_in_kf {
+  from {
+    scale: 100%;
+    opacity: 0%;
+  }
+  to {
+    scale: 100%;
+    opacity: 100%;
+  }
+}
+
 /*** GENEREL CSS ***/
 
 .indhold {
@@ -26,7 +47,7 @@ h1 {
   font-family: "Neue Montreal", sans-serif;
   font-size: 128px;
   color: #f00f09;
-  padding: 5px;
+  padding: 10px;
   font-weight: lighter;
 }
 
@@ -36,7 +57,7 @@ h2 {
   font-size: 25px;
   letter-spacing: 7px;
   text-align: right;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 h3 {
@@ -70,7 +91,7 @@ a {
 .divider {
   border-top: 1px solid #f00f09;
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 /*** FORSIDE ***/
@@ -186,6 +207,12 @@ a {
   padding: 10px 30px 0;
 }
 
+.h2_om_mig_kontakt {
+  font-size: 30px;
+  text-align: left;
+  padding: 10px 30px 0;
+}
+
 /*** FOOTER ***/
 
 .footer {
@@ -199,6 +226,7 @@ a {
 }
 
 .p_footer {
+  font-family: "Neue Montreal", sans-serif;
   font-size: 16px;
   font-weight: bold;
   padding: 2px 10px;
@@ -216,6 +244,7 @@ a {
   /*** FORSIDE ***/
   .velkommen {
     font-size: 50px;
+    padding-right: 0;
     text-align: right;
     justify-content: flex-end;
     align-items: flex-end;
@@ -226,6 +255,7 @@ a {
   .forside_billede {
     object-fit: cover;
     justify-self: right;
+    padding-right: 20px;
     max-width: 50%;
     height: auto;
     grid-row: 1 / span 1;
@@ -278,6 +308,7 @@ a {
   }
 
   .p_footer {
+    font-family: "Neue Montreal", sans-serif;
     font-size: 25px;
   }
 }
