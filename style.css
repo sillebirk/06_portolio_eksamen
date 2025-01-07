@@ -12,7 +12,6 @@ html {
   --red: #f00f09;
   --yellow: #f0c169;
   --white: #fffcf3;
-  --turquoise: #96c7c7;
   scroll-behavior: smooth;
 }
 
@@ -86,27 +85,27 @@ a {
 
 .velkommen {
   font-size: 22px;
-  display: flex; /* Gør det nemt at justere placering af indhold */
-  justify-content: flex-start; /* Højrejuster teksten vandret */
-  align-items: flex-end; /* Placer teksten i bunden lodret */
+  display: flex;
+  justify-content: flex-start; /* højrejusterer teksten vandret */
+  align-items: flex-end; /* placerer teksten i bunden lodret */
   text-align: right;
-  height: 100%; /* Sørg for, at containeren strækker sig over hele højden */
+  height: 100%; /* gør at containeren strækker sig over hele højden */
 }
 
 .introduktion {
   font-size: 18px;
-  display: flex; /* Gør det nemt at justere placering af indhold */
-  justify-content: flex-end; /* Højrejuster teksten vandret */
-  align-items: flex-end; /* Placer teksten i bunden lodret */
-  text-align: right; /* Justér teksten inden for boksen til højre */
-  height: 100%; /* Sørg for, at containeren strækker sig over hele højden */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+  height: 100%;
   margin: 10px 10px 10px;
 }
 
 .forside_billede {
   object-fit: cover;
-  max-width: 100%;
-  height: 100%;
+  width: 295px;
+  height: 371px;
 }
 
 .start {
@@ -158,35 +157,6 @@ a {
   text-align: right;
 }
 
-.link_til_site {
-  font-size: 30px;
-  color: var(--red);
-  font-style: italic;
-  cursor: pointer;
-  transform: scale(1); /* Startstørrelse */
-  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-
-.link_til_site:hover {
-  color: black; /* Slutfarve */
-  transform: scale(1.1); /* Slutstørrelse */
-}
-
-/* Da passionssite og virksomhedssite ville fylde for meget */
-.link_til_site_mindre {
-  font-family: "Fira Code", monospace;
-  font-size: 20px;
-  color: var(--red);
-  font-style: italic;
-  transform: scale(1); /* Startstørrelse */
-  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-
-.link_til_site_mindre:hover {
-  color: black; /* Slutfarve */
-  transform: scale(1.1); /* Slutstørrelse */
-}
-
 /* min løsning afsnit nederst */
 .p_loesning {
   text-align: center;
@@ -200,6 +170,35 @@ a {
   font-size: 20px;
   line-height: 150%;
   word-wrap: break-word;
+}
+
+.link_til_site {
+  font-size: 30px;
+  color: var(--red);
+  font-style: italic;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.link_til_site:hover {
+  color: black;
+  transform: scale(1.1);
+}
+
+/* Da passionssite og virksomhedssite ville fylde for meget */
+.link_til_site_mindre {
+  font-family: "Fira Code", monospace;
+  font-size: 20px;
+  color: var(--red);
+  font-style: italic;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.link_til_site_mindre:hover {
+  color: black;
+  transform: scale(1.1);
 }
 
 /*** OM MIG ***/
@@ -244,12 +243,11 @@ a {
   font-size: 50px;
   font-weight: lighter;
   color: var(--red);
-  padding: 10px;
   padding: 0;
 }
 
 .pil {
-  max-width: 30%;
+  max-width: 45px;
   padding: 0;
 }
 
@@ -272,11 +270,8 @@ a {
   /*** FORSIDE ***/
 
   h1 {
-    font-family: "Neue Montreal", sans-serif;
-    font-weight: lighter;
     font-size: 150px;
     color: var(--red);
-    padding: 10px;
   }
 
   .velkommen {
@@ -284,7 +279,6 @@ a {
     padding-right: 0;
     text-align: right;
     justify-content: flex-end;
-    align-items: flex-end;
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
   }
@@ -306,11 +300,7 @@ a {
 
   .start {
     font-size: 150px;
-    padding: 0;
     max-width: 100%;
-    font-family: "Neue Montreal", sans-serif;
-    font-weight: lighter;
-    color: var(--red);
     padding: 10px;
   }
 
@@ -340,14 +330,14 @@ a {
   }
 
   .h3_scale a {
-    color: black; /* Startfarve */
-    transform: scale(1); /* Startstørrelse */
+    color: black;
+    transform: scale(1);
     transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
   }
 
   .h3_scale a:hover {
-    color: #fffcf3; /*Slutfarve*/
-    transform: scale(1.1); /*Slutstørrelse*/
+    color: #fffcf3;
+    transform: scale(1.1);
   }
 
   .projekter {
@@ -378,38 +368,18 @@ a {
     letter-spacing: 7px;
   }
 
-  /*** Mit lottie-baggrundsbillede vil ikke blive vist på siden
-
-  .lottie {
-    background-color: url(img/lottie/baggrund_result.webp);
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 10000;
-  }
-
-  **/
-
   /*** FOOTER ***/
 
   .footer {
     font-size: 150px;
-    padding: 0;
     max-width: 100%;
   }
 
   .pil {
     max-width: 100px;
-    padding: 0;
   }
 
   .p_footer {
-    font-family: "Neue Montreal", sans-serif;
-    font-weight: lighter;
     font-size: 25px;
   }
 }
@@ -438,7 +408,6 @@ nav {
   margin-top: auto;
   width: 100%;
   justify-content: space-between;
-  /* transition: height 0.4s ease, opacity 0.4s ease; */
   transition: height 0.4s ease-out, opacity 0.4s ease-out;
 }
 
@@ -486,6 +455,7 @@ nav {
 }
 
 /*** NAV-BAR MOBILE ***/
+
 @media screen and (max-width: 800px) {
   .menu {
     flex-direction: column;
@@ -540,29 +510,11 @@ nav {
     color: var(--red);
   }
 }
-/*** NAV BAR SLUT ***/
 
 /*** FONTE ***/
 
 @font-face {
-  font-family: "Neue Montreal", sans-serif;
+  font-family: "Neue Montreal";
   src: url(../fonte/ppneuemontreal-book.woff);
   font-style: normal;
-  font-weight: lighter;
 }
-
-/* HAVDE PROBLEMER MED AT FÅ FONTEN TIL AT FUNGERE, MÅSKE HAR DET VÆRET EN TRIAL SOM IKKE KUNNE VIRKE PÅ MIT DOMÆNE?, ENDTE MED AT GÅ MED EN ANDEN FONT
-
-@font-face {
-  font-family: "Ssonder_Regular", serif;
-  src: url(../fonte/ssondertrial-regular-webfont.woff) format(woff);
-  src: url(../fonte/ssondertrial-regular-webfont.woff2) format("woff2");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ssonder_Italic", serif;
-  src: url(../fonte/ssondertrial-italic-webfont.woff) format(woff);
-  src: url(../fonte/ssondertrial-italic-webfont.woff2) format(woff2);
-  font-style: italic;
-} */
