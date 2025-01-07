@@ -1,0 +1,102 @@
+#bi {
+  width: 50%;
+  aspect-ratio: 15/16;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+}
+
+#bi_sprite {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(./svg/bi.svg);
+}
+
+/*** PLAY KNAP ***/
+
+#play_knap {
+  width: 50%;
+  aspect-ratio: 5/4;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+}
+
+#play_knap_sprite {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(./svg/play_knap.svg);
+}
+
+#play_knap_link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+/*** ANIMERING ***/
+
+.pulse {
+  animation-name: pulse_kf;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse_kf {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.forsvind {
+  animation-name: forsvind_kf;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes forsvind_kf {
+  20% {
+    scale: 1.5;
+  }
+
+  30% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 0;
+  }
+}
+
+/*** ANIMATION PÅ INDEX ***/
+
+.fade_in {
+  animation-name: fade_in_kf;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade_in_kf {
+  from {
+    scale: 100%;
+    opacity: 0%;
+  }
+  to {
+    scale: 100%;
+    opacity: 100%;
+  }
+}

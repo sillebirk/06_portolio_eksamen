@@ -11,6 +11,7 @@
     <!-- css-styling -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="animation.css" />
     <!-- h3-font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,6 +26,7 @@
     <title>04 - Animation</title>
   </head>
   <body>
+    <a href="04_animation.html"><h1 id="start"></h1></a>
     <header>
       <nav>
         <ul class="menu">
@@ -59,7 +61,12 @@
           <br />
           Samtidig arbejde vi med kontraster og “Rule og Thirds” for at skabe en balance i designet.
         </p>
-        <img src="img/bi-kopi_result.webp" alt="emnesite" class="screenshots" />
+        <!-- bi pulse og forsvind -->
+        <div id="element">
+          <div id="bi">
+            <div id="bi_sprite"></div>
+          </div>
+        </div>
         <p class="p_centreret">
           Da vi skulle animere elementerne brugte vi CSS-positionering; herunder “fixed, absolute, relative og sticky”.
           <br />
@@ -89,8 +96,12 @@
           Adobe-programmerne synes jeg krævede en del øvelse, at finde overblik i de mange værktøjer tog tid. Jeg benytttede mig derfor igennem hele forløbet af LinkedIn-learnings øvelsesvideoer og tilsvarende øvelses-dokumenter, der trin-for-trin hjalp mig til at forstå bl.a. pen-tool til vektorgrafikken.
         </p>
         <div class="divider"></div>
-        <p class="p_loesning">MIN LØSNING :</p>
-        <a href="https://sillebirk.dk/kea/04_animation/website/index.html" class="link_til_site">"04 - ANIMATION"</a>
+        <p class="p_loesning">MIN LØSNING:</p>
+        <div id="play_knap">
+          <a href="https://sillebirk.dk/kea/04_animation/website/index.html" class="pulse" id="play_knap_link">
+            <div id="play_knap_sprite"></div>
+          </a>
+        </div>
         <div class="divider"></div>
       </section>
       <div class="divider"></div>
@@ -100,11 +111,13 @@
       <p class="p_footer">Studerende på Multimediedesign-uddannelsen på Københavns Erhvervsakademi</p>
       <br />
       <div class="grid_footer">
-        <h1 class="footer">PORTFOLIO</h1>
+        <h1 class="footer"><a href="#start" class="start">PORTFOLIO</a></h1>
         <div class="footer"><img src="img/pil_result.webp" alt="pil" class="pil" /></div>
       </div>
     </footer>
   </body>
   <!-- burgermenu -->
   <script src="javascript/menu.js"></script>
+  <!-- javascript på play-knap-element -->
+  <script src="javascript/animation.js"></script>
 </html>

@@ -6,25 +6,14 @@
   box-sizing: border-box;
 }
 
-/*** ANIMATION ***/
-
-.fade_in {
-  animation-name: fade_in_kf;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade_in_kf {
-  from {
-    scale: 100%;
-    opacity: 0%;
-  }
-  to {
-    scale: 100%;
-    opacity: 100%;
-  }
+/*** VARIABLER ***/
+html {
+  --vanilla: #fffeef;
+  --red: #f00f09;
+  --yellow: #f0c169;
+  --white: #fffcf3;
+  --turquoise: #96c7c7;
+  scroll-behavior: smooth;
 }
 
 /*** GENEREL CSS ***/
@@ -40,15 +29,15 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #fffeef;
+  background-color: var(--vanilla);
 }
 
 h1 {
   font-family: "Neue Montreal", sans-serif;
-  font-size: 128px;
-  color: #f00f09;
-  padding: 10px;
   font-weight: lighter;
+  font-size: 128px;
+  color: var(--red);
+  padding: 10px;
 }
 
 h2 {
@@ -64,7 +53,7 @@ h3 {
   font-family: "Source Code Pro", serif;
   font-size: 40px;
   font-weight: 300;
-  background: radial-gradient(circle, #f00f09, #f0c169, #fffcf3, #fffeef) 75%;
+  background: radial-gradient(circle, var(--red), var(--yellow), var(--white), var(--vanilla)) 75%;
   padding: 190px 10px 190px 0;
 }
 
@@ -73,7 +62,7 @@ p {
   font-weight: lighter;
   font-size: 18px;
   overflow: hidden;
-  padding: 15px 0;
+  padding: 10px 0;
   line-height: 150%;
   word-wrap: break-word;
 }
@@ -89,9 +78,8 @@ a {
 }
 
 .divider {
-  border-top: 1px solid #f00f09;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  border-top: 1px solid var(--red);
+  margin: 30px 0;
 }
 
 /*** FORSIDE ***/
@@ -101,7 +89,7 @@ a {
   display: flex; /* Gør det nemt at justere placering af indhold */
   justify-content: flex-start; /* Højrejuster teksten vandret */
   align-items: flex-end; /* Placer teksten i bunden lodret */
-  text-align: right; /* Justér teksten inden for boksen til højre */
+  text-align: right;
   height: 100%; /* Sørg for, at containeren strækker sig over hele højden */
 }
 
@@ -121,10 +109,19 @@ a {
   height: 100%;
 }
 
+.start {
+  font-size: 50px;
+  padding: 0;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: lighter;
+  color: var(--red);
+  padding: 10px;
+}
+
 /*** PROJEKTER ***/
 
 .gradient_baggrund {
-  background: radial-gradient(circle, #f00f09, #f0c169, #fffcf3, #fffeef) 50%;
+  background: radial-gradient(circle, var(--red), var(--yellow), var(--white), var(--vanilla)) 50%;
   opacity: 0.7;
 }
 
@@ -142,16 +139,17 @@ a {
 }
 
 .h1_mindre {
-  font-size: 55px;
+  font-size: 60px;
   text-align: right;
-  padding: 30px 10px 20px 10px;
-  margin: 10px 10px;
+  padding: 30px 10px 0 10px;
+  margin: 0 10px;
 }
 
 .h2_venstre {
   text-align: left;
   font-size: 50px;
-  padding: 0;
+  padding-top: 20px;
+  padding-left: 0;
 }
 
 .uden_baggrund {
@@ -161,26 +159,44 @@ a {
 }
 
 .link_til_site {
-  color: #f00f09;
+  font-size: 30px;
+  color: var(--red);
   font-style: italic;
+  cursor: pointer;
+  transform: scale(1); /* Startstørrelse */
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.link_til_site:hover {
+  color: black; /* Slutfarve */
+  transform: scale(1.1); /* Slutstørrelse */
 }
 
 /* Da passionssite og virksomhedssite ville fylde for meget */
 .link_til_site_mindre {
   font-family: "Fira Code", monospace;
-  font-size: 30px;
-  color: #f00f09;
+  font-size: 20px;
+  color: var(--red);
   font-style: italic;
+  transform: scale(1); /* Startstørrelse */
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.link_til_site_mindre:hover {
+  color: black; /* Slutfarve */
+  transform: scale(1.1); /* Slutstørrelse */
 }
 
 /* min løsning afsnit nederst */
 .p_loesning {
   text-align: center;
-  padding: 10px 0;
+  font-size: 25px;
+  letter-spacing: 3px;
 }
+
 .h2_loesning {
   text-align: left;
-  padding: 10px 0;
+  padding: 35px 0 2px 0;
   font-size: 20px;
   line-height: 150%;
   word-wrap: break-word;
@@ -213,10 +229,22 @@ a {
   padding: 10px 30px 0;
 }
 
+.CV {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
 /*** FOOTER ***/
 
 .footer {
+  font-family: "Neue Montreal", sans-serif;
   font-size: 50px;
+  font-weight: lighter;
+  color: var(--red);
+  padding: 10px;
   padding: 0;
 }
 
@@ -227,8 +255,8 @@ a {
 
 .p_footer {
   font-family: "Neue Montreal", sans-serif;
+  font-weight: lighter;
   font-size: 16px;
-  font-weight: bold;
   padding: 2px 10px;
   margin: 0;
   text-align: right;
@@ -242,6 +270,15 @@ a {
   }
 
   /*** FORSIDE ***/
+
+  h1 {
+    font-family: "Neue Montreal", sans-serif;
+    font-weight: lighter;
+    font-size: 150px;
+    color: var(--red);
+    padding: 10px;
+  }
+
   .velkommen {
     font-size: 50px;
     padding-right: 0;
@@ -267,9 +304,50 @@ a {
     margin: 0;
   }
 
+  .start {
+    font-size: 150px;
+    padding: 0;
+    max-width: 100%;
+    font-family: "Neue Montreal", sans-serif;
+    font-weight: lighter;
+    color: var(--red);
+    padding: 10px;
+  }
+
+  .fade_in {
+    animation-name: fade_in_kf;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fade_in_kf {
+    from {
+      scale: 100%;
+      opacity: 0%;
+    }
+    to {
+      scale: 100%;
+      opacity: 100%;
+    }
+  }
+
   /*** PROJEKTER ***/
+
   h3 {
     padding: 350px 10px 350px 10px;
+  }
+
+  .h3_scale a {
+    color: black; /* Startfarve */
+    transform: scale(1); /* Startstørrelse */
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .h3_scale a:hover {
+    color: #fffcf3; /*Slutfarve*/
+    transform: scale(1.1); /*Slutstørrelse*/
   }
 
   .projekter {
@@ -278,9 +356,9 @@ a {
   }
 
   .h1_mindre {
-    font-size: 75px;
+    font-size: 90px;
     text-align: right;
-    padding: 100px 10px 20px 10px;
+    padding: 100px 10px 0 10px;
   }
 
   .uden_baggrund {
@@ -293,6 +371,28 @@ a {
     line-height: 150%;
     word-wrap: break-word;
   }
+
+  .p_loesning {
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 7px;
+  }
+
+  /*** Mit lottie-baggrundsbillede vil ikke blive vist på siden
+
+  .lottie {
+    background-color: url(img/lottie/baggrund_result.webp);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10000;
+  }
+
+  **/
 
   /*** FOOTER ***/
 
@@ -309,6 +409,7 @@ a {
 
   .p_footer {
     font-family: "Neue Montreal", sans-serif;
+    font-weight: lighter;
     font-size: 25px;
   }
 }
@@ -319,7 +420,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fffeef;
+  background-color: var(--vanilla);
 }
 
 nav {
@@ -354,14 +455,14 @@ nav {
   font-size: 40px;
   display: block;
   padding: 0 22px;
-  color: #f00f09;
+  color: var(--red);
   text-decoration: none;
   transition: transform 0.4s ease-out, color 0.4s ease-out;
   text-align: end;
 }
 
 .menu a:hover {
-  color: #f0c169;
+  color: var(--yellow);
   transform: scale(1.2);
   transition: 0.7s;
 }
@@ -372,7 +473,7 @@ nav {
   cursor: pointer;
   margin: 10px;
   padding: 5px;
-  color: #fffcf3;
+  color: var(--vanilla);
 }
 
 .burger img {
@@ -397,7 +498,7 @@ nav {
     width: 100vw;
     height: 100vh;
     z-index: 1000;
-    background: radial-gradient(circle, #f00f09, #f0c169, #96c7c7) 100%;
+    background: radial-gradient(circle, var(--red), var(--yellow), var(--vanilla)) 100%;
     background-size: cover;
     overflow: hidden;
   }
@@ -431,12 +532,12 @@ nav {
     line-height: 200%;
     color: #fffeef;
     transition: transform 0.4s ease-out, color 0.4s ease-out;
-    padding-right: 0;
+    padding-right: 5px;
   }
 
   nav.active .menu a:hover {
-    transform: scale(1.1); /* Gør teksten større ved hover */
-    color: #f00f09; /* Ændrer farven ved hover */
+    transform: scale(1.1);
+    color: var(--red);
   }
 }
 /*** NAV BAR SLUT ***/
@@ -450,7 +551,7 @@ nav {
   font-weight: lighter;
 }
 
-/* HAVDE PROBLEMER MED AT FÅ FONTEN TIL AT FUNGERE, MÅSKE HAR DET VÆRET EN TRIAL SOM IKKE KUNNE VIRKE PÅ MIT DOMÆNE?
+/* HAVDE PROBLEMER MED AT FÅ FONTEN TIL AT FUNGERE, MÅSKE HAR DET VÆRET EN TRIAL SOM IKKE KUNNE VIRKE PÅ MIT DOMÆNE?, ENDTE MED AT GÅ MED EN ANDEN FONT
 
 @font-face {
   font-family: "Ssonder_Regular", serif;
